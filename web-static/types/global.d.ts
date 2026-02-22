@@ -20,3 +20,9 @@ type CustomState<T> = {
   value: T | undefined;
   set: Dispatch<SetStateAction<T | undefined>>;
 };
+
+// Zustand
+interface StoreProps<T> {
+  data: T;
+  setData: (value: T) => void;
+}
