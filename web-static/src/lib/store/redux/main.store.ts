@@ -1,10 +1,5 @@
+import { counterSlice } from "@/features/state-management/redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { SliceData } from "@/core/store/client/redux/models";
-
-export const counterSlice = SliceData.create({
-  name: "counter",
-  initialData: 0,
-});
 
 // npm install @reduxjs/toolkit react-redux
 export const store = configureStore({

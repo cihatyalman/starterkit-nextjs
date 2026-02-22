@@ -1,7 +1,7 @@
 "use client";
 
 import { CButton } from "@/components/custom/CButton";
-import { counterStore } from "../utils/store";
+import { counterStore } from "./zustand.store";
 
 export const DemoZustand = () => {
   const counter = counterStore();
