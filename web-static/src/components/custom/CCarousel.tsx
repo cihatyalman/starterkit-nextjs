@@ -20,24 +20,24 @@ export interface CCarouselProps<T = number> {
   autoPlay?: boolean;
   className?: string;
   classNameContent?: string;
-  children: (args: { item: T; index: number }) => React.ReactNode;
+  children: (args: { item: T | number; index: number }) => React.ReactNode;
 }
 
-export const CCarousel = ({
+export const CCarousel = <T,>({
   arrowButtonActive = false,
   isLoop = false,
   autoPlay = false,
   orientation = "horizontal",
   ...props
-}: CCarouselProps) => {
-  const [api, setApi] = useState<CarouselApi>();
-
+}: CCarouselProps<T>) => {
   const itemList =
     typeof props.items === "number"
       ? Array.from({ length: props.items }, (_, i) => i)
       : props.items;
 
   if (itemList.length === 0) return null;
+
+  const [api, setApi] = useState<CarouselApi>();
 
   const timer = useMemo(() => {
     return new CustomTimer(() => {

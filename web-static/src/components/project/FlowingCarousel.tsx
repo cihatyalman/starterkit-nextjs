@@ -3,24 +3,29 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-export interface FlowingCarouselProps<T> {
-  items: T[];
+export interface FlowingCarouselProps<T = number> {
+  items: T[] | number;
   speed?: number;
   space?: string;
   loopCopies?: 2 | 4 | 6 | 8;
-  children: (args: { item: T }) => React.ReactNode;
+  children: (args: { item: T | number }) => React.ReactNode;
 }
 
 export const FlowingCarousel = <T,>({
-  items,
   speed = 10,
   space = "pl-10",
   loopCopies = 2,
   children,
+  ...props
 }: FlowingCarouselProps<T>) => {
-  const [paused, setPaused] = useState(false);
+  const itemList =
+    typeof props.items === "number"
+      ? Array.from({ length: props.items }, (_, i) => i)
+      : props.items;
 
-  if (!items || items.length === 0) return null;
+  if (itemList.length === 0) return null;
+
+  const [paused, setPaused] = useState(false);
 
   const edgeStyle =
     "absolute pointer-events-none inset-y-0 w-24 from-white dark:from-[oklch(0.13_0.028_261.692)]";
@@ -44,12 +49,12 @@ export const FlowingCarousel = <T,>({
           } as React.CSSProperties
         }
       >
-        {[...Array.from({ length: loopCopies }, () => items).flat()].map(
+        {[...Array.from({ length: loopCopies }, () => itemList).flat()].map(
           (item, i) => (
             <div key={i} className={space}>
               {children({ item })}
             </div>
-          )
+          ),
         )}
       </div>
       <div className={cn(edgeStyle, "left-0 bg-linear-to-r")} />

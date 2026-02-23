@@ -3,14 +3,13 @@
 import { CCarousel } from "@/components/custom/CCarousel";
 
 export const DemoCarousel = (props: { className?: string }) => {
-  const tempList = Array.from({ length: 14 }, (_, i) => i);
+  const tempList = Array.from({ length: 5 }, (_, i) => i);
 
   return (
     <div className="flex pl-12 pr-12 justify-center">
       <CCarousel
         // items={5}
-        // items={tempList}
-        items={[]}
+        items={tempList}
         basis="md:basis-1/2 lg:basis-1/3"
         arrowButtonActive
         isLoop
