@@ -6,7 +6,7 @@ import { CTextButton } from "@/components/custom/CTextButton";
 import { delay } from "@/core/helpers";
 import { Info } from "lucide-react";
 
-export const ButtonsDemo = () => {
+export const DemoButtons = () => {
   return (
     <div>
       <div className="flex flex-wrap gap-2">
