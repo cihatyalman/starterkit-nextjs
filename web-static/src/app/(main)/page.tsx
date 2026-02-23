@@ -1,3 +1,4 @@
+import { DemoAccordion } from "@/features/accordion";
 import { DemoButtons } from "@/features/button";
 import { DemoInputs } from "@/features/input";
 import { DemoRedux } from "@/features/state-management/redux";
@@ -34,6 +35,12 @@ export default function HomePage() {
         <Title value="Inputs" />
         <DemoInputs />
         <div className="h-3" />
+        <Hr />
+      </div>
+      {/* Accordion */}
+      <div>
+        <Title value="Accordion" />
+        <DemoAccordion />
         <Hr />
       </div>
     </div>
