@@ -1,5 +1,7 @@
 import { DemoAccordion } from "@/features/accordion";
 import { DemoButtons } from "@/features/button";
+import { DemoCarousel } from "@/features/carousel";
+import { DemoFlowingCarousel } from "@/features/flowing-carousel";
 import { DemoInputs } from "@/features/input";
 import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
@@ -41,6 +43,18 @@ export default function HomePage() {
       <div>
         <Title value="Accordion" />
         <DemoAccordion />
+        <Hr />
+      </div>
+      {/* Carousel */}
+      <div>
+        <Title value="Carousel" />
+        <DemoCarousel />
+        <Hr />
+      </div>
+      {/* FlowingCarousel */}
+      <div>
+        <Title value="FlowingCarousel" />
+        <DemoFlowingCarousel />
         <Hr />
       </div>
     </div>

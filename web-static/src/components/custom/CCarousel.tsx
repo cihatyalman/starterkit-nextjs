@@ -1,0 +1,80 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { CustomTimer } from "@/core/helpers/timer";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+
+export interface CCarouselProps<T = number> {
+  items: T[] | number;
+  arrowButtonActive?: boolean;
+  isLoop?: boolean;
+  basis?: string;
+  orientation?: "horizontal" | "vertical";
+  autoPlay?: boolean;
+  className?: string;
+  classNameContent?: string;
+  children: (args: { item: T; index: number }) => React.ReactNode;
+}
+
+export const CCarousel = ({
+  arrowButtonActive = false,
+  isLoop = false,
+  autoPlay = false,
+  orientation = "horizontal",
+  ...props
+}: CCarouselProps) => {
+  const [api, setApi] = useState<CarouselApi>();
+
+  const itemList =
+    typeof props.items === "number"
+      ? Array.from({ length: props.items }, (_, i) => i)
+      : props.items;
+
+  if (itemList.length === 0) return null;
+
+  const timer = useMemo(() => {
+    return new CustomTimer(() => {
+      if (api) {
+        if (api.canScrollNext()) api.scrollNext();
+        else api.scrollTo(0);
+      }
+    }, 3000);
+  }, [api]);
+
+  useEffect(() => {
+    if (autoPlay) timer.start();
+    else timer.reset();
+
+    return () => timer.reset();
+  }, [autoPlay, timer]);
+
+  return (
+    <Carousel
+      orientation={orientation}
+      setApi={setApi}
+      opts={{ align: "start", loop: isLoop }}
+      className={`min-w-0 ${props.className}`}
+      onMouseEnter={() => timer.stop()}
+      onMouseLeave={() => {
+        if (autoPlay) timer.start();
+      }}
+    >
+      <CarouselContent className={props.classNameContent}>
+        {itemList.map((item, index) => (
+          <CarouselItem key={index} className={props.basis}>
+            {props.children({ item, index })}
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      {arrowButtonActive && <CarouselPrevious />}
+      {arrowButtonActive && <CarouselNext />}
+    </Carousel>
+  );
+};
