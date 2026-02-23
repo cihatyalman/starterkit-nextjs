@@ -449,7 +449,7 @@ const SliderBlock = () => {
   return (
     <div className="flex gap-2">
       <div className="flex flex-col w-full gap-2">
-        <p className="mb-1">Slider: ({sliderValue.join(" : ")})</p>
+        <p>Slider: ({sliderValue.join(" : ")})</p>
         <Slider
           name="Slider"
           min={0}
