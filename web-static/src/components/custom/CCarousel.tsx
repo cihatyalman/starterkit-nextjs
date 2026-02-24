@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CustomTimer } from "@/core/helpers/timer";
+import { useTimer } from "@/core/hook/useTimer";
 import {
   Carousel,
   CarouselApi,
@@ -38,22 +38,20 @@ export const CCarousel = <T,>({
   if (itemList.length === 0) return null;
 
   const [api, setApi] = useState<CarouselApi>();
-
-  const timer = useMemo(() => {
-    return new CustomTimer(() => {
-      if (api) {
-        if (api.canScrollNext()) api.scrollNext();
-        else api.scrollTo(0);
-      }
-    }, 3000);
-  }, [api]);
+  const timer = useTimer(3000);
 
   useEffect(() => {
     if (autoPlay) timer.start();
     else timer.reset();
-
     return () => timer.reset();
-  }, [autoPlay, timer]);
+  }, [autoPlay]);
+
+  useEffect(() => {
+    if (api) {
+      if (api.canScrollNext()) api.scrollNext();
+      else api.scrollTo(0);
+    }
+  }, [api, timer.count]);
 
   return (
     <Carousel

@@ -6,6 +6,7 @@ import { DemoForm } from "@/features/form";
 import { DemoInputs } from "@/features/input";
 import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
+import { DemoTools } from "@/features/tools";
 
 export default function HomePage() {
   return (
@@ -44,6 +45,12 @@ export default function HomePage() {
       <div>
         <Title value="Form" />
         <DemoForm />
+        <Hr />
+      </div>
+      {/* Tools */}
+      <div>
+        <Title value="Tools" />
+        <DemoTools />
         <Hr />
       </div>
       {/* Accordion */}
