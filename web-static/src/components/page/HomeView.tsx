@@ -4,7 +4,9 @@ import { DemoButtons } from "@/features/button";
 import { DemoCarousel } from "@/features/carousel";
 import { DemoFlowingCarousel } from "@/features/flowing-carousel";
 import { DemoForm } from "@/features/form";
+import { DemoGrid } from "@/features/grid";
 import { DemoInputs } from "@/features/input";
+import { DemoList } from "@/features/list";
 import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
 import { DemoTools } from "@/features/tools";
@@ -72,6 +74,18 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
       <section>
         <Title value="FlowingCarousel" />
         <DemoFlowingCarousel />
+        <Hr />
+      </section>
+      {/* List */}
+      <section>
+        <Title value="List" />
+        <DemoList />
+        <Hr />
+      </section>
+      {/* Grid */}
+      <section>
+        <Title value="Grid" />
+        <DemoGrid />
         <Hr />
       </section>
     </div>
