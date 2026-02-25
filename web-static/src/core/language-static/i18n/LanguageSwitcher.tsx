@@ -24,6 +24,7 @@ export const LanguageSwitcher = (props: {
     if (nextLocale !== DEFAULT_LOCALE) {
       segments.unshift(nextLocale);
     }
+    // segments.unshift(nextLocale);
 
     return "/" + segments.join("/");
   }
@@ -41,7 +42,7 @@ export const LanguageSwitcher = (props: {
       className={cn(
         "cursor-pointer border",
         "bg-background hover:bg-accent text-foreground",
-        props.className
+        props.className,
       )}
     >
       {locale.toUpperCase()}

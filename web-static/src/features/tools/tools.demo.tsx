@@ -9,8 +9,11 @@ import { CPopup, CPopupHandle } from "@/components/custom/CPopup";
 import { CLottie } from "@/components/DynamicLoader";
 import { SideDrawer, sideStore } from "@/components/project/SideDrawer";
 import { useTimer } from "@/core/hook/useTimer";
+import { getMessages } from "@/core/language-static/i18n/helpers";
+import { useClientLocale } from "@/core/language-static/i18n/helpers/client";
+import { LanguageSwitcher } from "@/core/language-static/i18n/LanguageSwitcher";
 import { ThemeButton } from "@/core/theme/ThemeButton";
-import { Pause, Play, RotateCcw, Square } from "lucide-react";
+import { Pause, Play, Square } from "lucide-react";
 import { useRef } from "react";
 
 export const DemoTools = () => {
@@ -25,8 +28,8 @@ export const DemoTools = () => {
         <PopupBlock />
         <OtpPopupBlock />
         <SideDriverBlock />
-        {/* <LanguageBlock /> */}
         <ThemeBlock />
+        <LanguageBlock />
       </div>
     </div>
   );
@@ -181,6 +184,20 @@ const ThemeBlock = () => {
   return (
     <BaseItem title="Tema örneği">
       <ThemeButton />
+    </BaseItem>
+  );
+};
+
+const LanguageBlock = () => {
+  const locale = useClientLocale();
+  const t = getMessages(locale);
+
+  return (
+    <BaseItem title="Çoklu dil örneği">
+      <div className="flex flex-col gap-2 items-center">
+        <p className="text-lg">{t.home.welcome}</p>
+        <LanguageSwitcher extraPath="#others" />
+      </div>
     </BaseItem>
   );
 };

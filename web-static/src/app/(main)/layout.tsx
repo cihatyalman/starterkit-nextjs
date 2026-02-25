@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getMetadata } from "@/lib/metadata";
 import { ScrollListener } from "@/core/helperx/scroll_listener/ScrollListener";
+import HtmlLangUpdater from "@/core/language-static/i18n/HtmlLangUpdater";
 
 const title = "Starter Kit";
 const ogtitle = "Starter Kit | Next.js";
@@ -20,7 +21,7 @@ export default function MainLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      {/* <HtmlLangUpdater /> */}
+      <HtmlLangUpdater />
       <ScrollListener />
       <div className="min-h-svh flex flex-col">
         {/* <Header /> */}
