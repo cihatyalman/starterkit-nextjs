@@ -4,6 +4,7 @@ import { DemoButtons } from "@/features/button";
 import { DemoCarousel } from "@/features/carousel";
 import { DemoFlowingCarousel } from "@/features/flowing-carousel";
 import { DemoForm } from "@/features/form";
+import { DemoGraphic } from "@/features/graphic";
 import { DemoGrid } from "@/features/grid";
 import { DemoInputs } from "@/features/input";
 import { DemoList } from "@/features/list";
@@ -93,6 +94,12 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
       <section>
         <Title value="SortableList" />
         <DemoSortableList />
+        <Hr />
+      </section>
+      {/* Graphic */}
+      <section>
+        <Title value="Graphic" />
+        <DemoGraphic />
         <Hr />
       </section>
     </div>
