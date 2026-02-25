@@ -32,48 +32,48 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
         </section>
       </div>
       {/* Buttons */}
-      <div>
+      <section>
         <Title value="Buttons" />
         <DemoButtons />
         <Hr />
-      </div>
+      </section>
       {/* Inputs */}
-      <div>
+      <section>
         <Title value="Inputs" />
         <DemoInputs />
         <div className="h-3" />
         <Hr />
-      </div>
+      </section>
       {/* Form */}
-      <div>
+      <section>
         <Title value="Form" />
         <DemoForm />
         <Hr />
-      </div>
+      </section>
       {/* Tools */}
-      <div>
+      <section>
         <Title value="Tools" />
         <DemoTools />
         <Hr />
-      </div>
+      </section>
       {/* Accordion */}
-      <div>
+      <section>
         <Title value="Accordion" />
         <DemoAccordion />
         <Hr />
-      </div>
+      </section>
       {/* Carousel */}
-      <div>
+      <section>
         <Title value="Carousel" />
         <DemoCarousel />
         <Hr />
-      </div>
+      </section>
       {/* FlowingCarousel */}
-      <div>
+      <section>
         <Title value="FlowingCarousel" />
         <DemoFlowingCarousel />
         <Hr />
-      </div>
+      </section>
     </div>
   );
 };

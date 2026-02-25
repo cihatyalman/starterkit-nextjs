@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { getMetadata } from "@/lib/metadata";
-import { ScrollListener } from "@/core/helperx/scroll_listener/ScrollListener";
+import { ScrollListener } from "@/core/helperx/scroll-listener/ScrollListener";
 import HtmlLangUpdater from "@/core/language-static/i18n/HtmlLangUpdater";
+import { ScrollToTop } from "@/components/custom/ScrollToTop";
 
 const title = "Starter Kit";
 const ogtitle = "Starter Kit | Next.js";
@@ -30,7 +31,7 @@ export default function MainLayout({
         </main>
         {/* <Footer /> */}
       </div>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
     </>
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+import { cn } from "@/lib/utils";
 import { CButton } from "@/components/custom/CButton";
 import { CCountdown } from "@/components/custom/CCountdown";
 import { CLink } from "@/components/custom/CLink";
@@ -14,11 +16,11 @@ import { useClientLocale } from "@/core/language-static/i18n/helpers/client";
 import { LanguageSwitcher } from "@/core/language-static/i18n/LanguageSwitcher";
 import { ThemeButton } from "@/core/theme/ThemeButton";
 import { Pause, Play, Square } from "lucide-react";
-import { useRef } from "react";
 
 export const DemoTools = () => {
   return (
     <div className="relative flex gap-2">
+      <StickyBox />
       <div className="flex flex-wrap gap-2 text-center">
         <CustomTimerBlock />
         <CountdownBlock />
@@ -30,6 +32,17 @@ export const DemoTools = () => {
         <SideDriverBlock />
         <ThemeBlock />
         <LanguageBlock />
+      </div>
+    </div>
+  );
+};
+
+const StickyBox = () => {
+  return (
+    <div className={cn("sticky top-2", "h-fit border-2 p-3")}>
+      <div className="text-center">
+        <p>Sticky</p>
+        <p className="text-sm">Yapışkan</p>
       </div>
     </div>
   );
