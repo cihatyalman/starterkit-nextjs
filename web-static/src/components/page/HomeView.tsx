@@ -6,6 +6,7 @@ import { DemoFlowingCarousel } from "@/features/flowing-carousel";
 import { DemoForm } from "@/features/form";
 import { DemoGraphic } from "@/features/graphic";
 import { DemoGrid } from "@/features/grid";
+import { DemoImage } from "@/features/image";
 import { DemoInputs } from "@/features/input";
 import { DemoList } from "@/features/list";
 import { DemoSortableList } from "@/features/sortable-list";
@@ -19,7 +20,7 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
   return (
     <div
       className="flex flex-col gap-2 p-3 items-center
-        *:w-full *:max-w-5xl"
+        *:w-full *:max-w-6xl"
     >
       {/* State */}
       <div
@@ -94,6 +95,12 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
       <section>
         <Title value="SortableList" />
         <DemoSortableList />
+        <Hr />
+      </section>
+      {/* Image */}
+      <section>
+        <Title value="Image" />
+        <DemoImage />
         <Hr />
       </section>
       {/* Graphic */}
