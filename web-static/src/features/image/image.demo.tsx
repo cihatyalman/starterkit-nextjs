@@ -1,7 +1,6 @@
 "use client";
 
 import { CButton } from "@/components/custom/CButton";
-import { CCropImage } from "@/components/custom/CCropImage";
 import { CImage } from "@/components/custom/CImage";
 import {
   CImageListPreview,
@@ -9,6 +8,7 @@ import {
 } from "@/components/custom/CImageListPreview";
 import { CImagePreview } from "@/components/custom/CImagePreview";
 import { CStateComponent } from "@/components/custom/CStateComponent";
+import { CCropImage } from "@/components/DynamicLoader";
 import {
   ResizableHandle,
   ResizablePanel,

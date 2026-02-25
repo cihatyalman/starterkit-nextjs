@@ -7,7 +7,7 @@ import { useState } from "react";
 import { createQueryClient } from "./query-client";
 
 // layout.tsx içinde kullan
-export default function ReactQueryProvider({
+export function ReactQueryProvider({
   children,
 }: {
   children: React.ReactNode;

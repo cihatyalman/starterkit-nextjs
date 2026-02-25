@@ -5,8 +5,8 @@ import "@/styles/base.css";
 import "@/styles/project.css";
 import { getMetadata } from "@/lib/metadata";
 import { fontBase } from "@/assets/fonts";
-import ReduxProvider from "@/core/store/client/redux/provider";
-import { ThemeProvider } from "@/core/theme/theme.provider";
+import { ReduxProvider } from "@/lib/store/redux/provider";
+import { ThemeProvider } from "@/core/theme/provider";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = getMetadata.root({

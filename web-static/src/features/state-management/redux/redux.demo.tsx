@@ -2,7 +2,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { counterSlice } from "../redux/redux.store";
-import { RootState } from "@/lib/store/redux/main.store";
+import { RootState } from "@/lib/store/redux/store";
 import { CButton } from "@/components/custom/CButton";
 
 export const DemoRedux = () => {

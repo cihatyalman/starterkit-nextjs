@@ -1,7 +1,6 @@
 "use client";
 
-import { CLineChart } from "@/components/custom/CLineChart";
-import { CLineChartMulti } from "@/components/custom/CLineChartMulti";
+import { CLineChart, CLineChartMulti } from "@/components/DynamicLoader";
 
 export const DemoGraphic = () => {
   const dataSet1 = [
