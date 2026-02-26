@@ -3,18 +3,18 @@ import { dataSchemes } from "./_schema";
 import { toDateFromString } from "@/core/helpers/date";
 
 export const RawBaseSchema = z.object({
-  Id: z.string().optional(),
-  CreatedDatetime: dataSchemes.datetime,
-  UpdatedDatetime: dataSchemes.datetime,
+  id: z.string().optional(),
+  createdDatetime: dataSchemes.datetime,
+  updatedDatetime: dataSchemes.datetime,
 });
 
 export const BaseSchema = RawBaseSchema.transform((raw) => ({
-  id: raw.Id,
-  createdDatetime: raw.CreatedDatetime
-    ? toDateFromString(raw.CreatedDatetime)
+  id: raw.id,
+  createdDatetime: raw.createdDatetime
+    ? toDateFromString(raw.createdDatetime)
     : null,
-  updatedDatetime: raw.UpdatedDatetime
-    ? toDateFromString(raw.UpdatedDatetime)
+  updatedDatetime: raw.updatedDatetime
+    ? toDateFromString(raw.updatedDatetime)
     : null,
 }));
 export type BaseModel = z.infer<typeof BaseSchema>;
@@ -22,12 +22,12 @@ export type BaseModel = z.infer<typeof BaseSchema>;
 /* #region Helpers */
 export function mapBase(raw: z.infer<typeof RawBaseSchema>) {
   return {
-    id: raw.Id,
-    createdDatetime: raw.CreatedDatetime
-      ? toDateFromString(raw.CreatedDatetime)
+    id: raw.id,
+    createdDatetime: raw.createdDatetime
+      ? toDateFromString(raw.createdDatetime)
       : null,
-    updatedDatetime: raw.UpdatedDatetime
-      ? toDateFromString(raw.UpdatedDatetime)
+    updatedDatetime: raw.updatedDatetime
+      ? toDateFromString(raw.updatedDatetime)
       : null,
   };
 }

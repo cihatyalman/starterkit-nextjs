@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-// Documents
-// https://ui.shadcn.com/docs/components/radix/data-table
-// npm i @tanstack/react-table
-// npx shadcn@latest add table dropdown-menu
+/** Documents
+https://ui.shadcn.com/docs/components/radix/data-table
+npm i @tanstack/react-table
+npx shadcn@latest add table dropdown-menu
+
+*/
 
 "use client";
 
@@ -103,12 +105,14 @@ interface ActionOptions<TData> {
 
 interface PaginationOptions {
   initialPageSize: number;
+  manuelPagination?: boolean;
   pageCount?: number;
   loading?: boolean;
   isPageSizeControl?: boolean;
   pageSizeList?: number[];
   paginationFn?: (props: PaginationType) => void;
 }
+
 /* #endregion */
 
 export const CDataTable = <TData,>(props: CDataTableProps<TData>) => {
@@ -121,6 +125,30 @@ export const CDataTable = <TData,>(props: CDataTableProps<TData>) => {
 
   const columns = columnsConfig(props);
 
+  // const table = useReactTable({
+  //   data: props.data,
+  //   columns: columns,
+  //   defaultColumn: getDefaultColumn(props),
+  //   getCoreRowModel: getCoreRowModel(),
+  //   onSortingChange: setSorting,
+  //   getSortedRowModel: getSortedRowModel(),
+  //   onColumnFiltersChange: setColumnFilters,
+  //   getFilteredRowModel: getFilteredRowModel(),
+  //   onColumnVisibilityChange: setColumnVisibility,
+  //   getPaginationRowModel: getPaginationRowModel(),
+  //   onPaginationChange: setPagination,
+  //   initialState: {
+  //     pagination: props.paginationOptions && pagination,
+  //   },
+  //   state: {
+  //     sorting,
+  //     columnFilters,
+  //     columnVisibility,
+  //     pagination,
+  //   },
+  //   pageCount: props.paginationOptions?.pageCount,
+  //   manualPagination: true,
+  // });
   const table = useReactTable({
     data: props.data,
     columns: columns,
@@ -143,7 +171,8 @@ export const CDataTable = <TData,>(props: CDataTableProps<TData>) => {
       pagination,
     },
     pageCount: props.paginationOptions?.pageCount,
-    manualPagination: true,
+    manualPagination:
+      props.paginationOptions?.manuelPagination === false ? false : true,
   });
 
   useEffect(() => {
@@ -257,7 +286,7 @@ export const CDataTable = <TData,>(props: CDataTableProps<TData>) => {
       </div>
       <div className="flex gap-2 justify-end items-end">
         {props.children && <div className="w-full">{props.children}</div>}
-        {props.paginationOptions?.paginationFn && (
+        {props.paginationOptions && (
           <PaginationControl
             table={table}
             loading={props.paginationOptions.loading}

@@ -5,7 +5,7 @@ const datetime = z.string().nullable().optional().catch(null);
 const record = (defaultt: Record<string, MyAny> = {}) =>
   z.record(z.string(), z.any()).nullable().optional().catch(defaultt);
 
-const fixedNumber = (digit: number = 5) =>
+const fixedNumber = (digit: number = 2) =>
   z.coerce
     .number()
     .catch(0)

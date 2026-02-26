@@ -4,20 +4,20 @@ import { dataSchemes } from "./_schema";
 import { toDateFromString } from "@/core/helpers/date";
 
 const RawUserSchema = RawBaseSchema.extend({
-  Role: z.number(),
-  Username: z.string(),
-  Fullname: z.string(),
-  ProfileImageUrl: z.string().nullable().optional(),
-  LastLoginDate: dataSchemes.datetime,
+  role: z.number(),
+  username: z.string(),
+  fullname: z.string(),
+  profileImageUrl: z.string().nullable().optional(),
+  lastLoginDate: dataSchemes.datetime,
 });
 
 export const UserSchema = RawUserSchema.transform((raw) => ({
   ...mapBase(raw),
-  role: raw.Role,
-  username: raw.Username,
-  fullname: raw.Fullname,
-  profileImageUrl: raw.ProfileImageUrl,
-  lastLoginDate: raw.LastLoginDate ? toDateFromString(raw.LastLoginDate) : null,
+  role: raw.role,
+  username: raw.username,
+  fullname: raw.fullname,
+  profileImageUrl: raw.profileImageUrl,
+  lastLoginDate: raw.lastLoginDate ? toDateFromString(raw.lastLoginDate) : null,
 }));
 export type User = z.infer<typeof UserSchema>;
 

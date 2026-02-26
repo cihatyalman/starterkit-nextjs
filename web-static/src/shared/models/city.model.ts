@@ -2,12 +2,12 @@ import { z } from "zod";
 import { mapBase, RawBaseSchema } from "./base.model";
 
 const RawCitySchema = RawBaseSchema.extend({
-  Title: z.string(),
+  title: z.string(),
 });
 
 export const CitySchema = RawCitySchema.transform((raw) => ({
   ...mapBase(raw),
-  title: raw.Title,
+  title: raw.title,
 }));
 export type City = z.infer<typeof CitySchema>;
 
@@ -23,7 +23,7 @@ export function parseCityList(data: MyAny): City[] {
 
 /* #region Write */
 export const AddOrUpdateCitySchema = z.object({
-  newTitle: z.string(),
+  newtitle: z.string(),
 });
 export type AddOrUpdateCity = z.infer<typeof AddOrUpdateCitySchema>;
 /* #endregion */

@@ -3,18 +3,18 @@ import { dataSchemes } from "./_schema";
 import { showToast } from "@/core/helperx/toast";
 
 const RawResponseSchema = z.object({
-  HasError: z.boolean().catch(false),
-  Message: z.string().nullable().optional(),
-  ValidationErrors: dataSchemes.record(),
-  Data: z.any().nullable().optional(),
+  hasError: z.boolean().catch(false),
+  message: z.string().nullable().optional(),
+  validationErrors: dataSchemes.record(),
+  data: z.any().nullable().optional(),
 });
 export type RawResponse = z.infer<typeof RawResponseSchema>;
 
 export const ResponseSchema = RawResponseSchema.transform((raw) => ({
-  hasError: raw.HasError,
-  message: raw.Message,
-  validationErrors: raw.ValidationErrors,
-  data: raw.Data,
+  hasError: raw.hasError,
+  message: raw.message,
+  validationErrors: raw.validationErrors,
+  data: raw.data,
 }));
 export type Response = z.infer<typeof ResponseSchema>;
 
@@ -30,13 +30,13 @@ export function parseResponseWithCheck(
   if (!raw) {
     showToast({ message: "Beklenmedik bir sorun oluştu." });
     return parseResponse({ hasError: true });
-  } else if (raw.HasError === true && raw.Message !== "-") {
-    showToast({ message: raw.Message });
+  } else if (raw.hasError === true && raw.message !== "-") {
+    showToast({ message: raw.message });
     return parseResponse({ hasError: true });
   }
 
-  if (options?.isOkeyNoti && raw.Message !== "-") {
-    showToast({ type: "success", message: raw.Message });
+  if (options?.isOkeyNoti && raw.message !== "-") {
+    showToast({ type: "success", message: raw.message });
   }
   return parseResponse(raw);
 }

@@ -12,6 +12,7 @@ import { DemoList } from "@/features/list";
 import { DemoSortableList } from "@/features/sortable-list";
 import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
+import { DemoTable } from "@/features/table/table.demo";
 import { DemoTools } from "@/features/tools";
 
 export const HomeView = ({ locale }: { locale?: LocaleType }) => {
@@ -19,7 +20,7 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
 
   return (
     <div
-      className="flex flex-col gap-2 p-3 items-center
+      className="flex flex-col gap-2 p-3 items-center mb-50
         *:w-full *:max-w-6xl"
     >
       {/* State */}
@@ -107,6 +108,12 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
       <section>
         <Title value="Graphic" />
         <DemoGraphic />
+        <Hr />
+      </section>
+      {/* Table */}
+      <section>
+        <Title value="Table" />
+        <DemoTable />
         <Hr />
       </section>
     </div>
