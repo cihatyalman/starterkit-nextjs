@@ -68,7 +68,7 @@ export const CInputDatePicker = ({
       name={props.name}
       placeholder={placeholder}
       maxLength={10}
-      className="bg-background pr-10 text-sm overflow-x-auto"
+      className="pr-10 text-sm overflow-x-auto"
       value={internalValue}
       onChange={(e) => {
         setInternalValue(e.target.value);

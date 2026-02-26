@@ -14,10 +14,6 @@ export function ScrollListener() {
         window.requestAnimationFrame(() => {
           const scrollTop =
             document.documentElement.scrollTop || document.body.scrollTop;
-          document.documentElement.style.setProperty(
-            "--scroll-y",
-            `${scrollTop}px`,
-          );
           setScroll(scrollTop);
           ticking = false;
         });

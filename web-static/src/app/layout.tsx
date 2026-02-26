@@ -8,6 +8,7 @@ import { fontBase } from "@/assets/fonts";
 import { ReduxProvider } from "@/lib/store/redux/provider";
 import { ThemeProvider } from "@/core/theme/provider";
 import { Toaster } from "react-hot-toast";
+import { DEFAULT_LOCALE } from "@/core/language-static/i18n/types";
 
 export const metadata: Metadata = getMetadata.root({
   icons: { icon: "/favicon.ico", shortcut: "/favicon.ico" },
@@ -21,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="tr"
+      lang={DEFAULT_LOCALE}
       data-scroll-behavior="smooth"
-      className="scroll-smooth"
+      className="scroll-smooth scroll-pt-16"
       suppressHydrationWarning
     >
       <body className={`${fontBase.className} antialiased`}>

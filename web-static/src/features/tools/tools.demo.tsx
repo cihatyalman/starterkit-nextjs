@@ -108,7 +108,7 @@ const LinkBlock = () => {
     <BaseItem title="Link örneği">
       <p className="text-sm">
         Bu bir{" "}
-        <CLink href="https://www.google.com" target="_blank">
+        <CLink href="https://www.google.com" target="_blank" isUnderline>
           Link
         </CLink>{" "}
         örneğidir.

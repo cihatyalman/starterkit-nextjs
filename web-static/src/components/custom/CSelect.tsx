@@ -32,14 +32,14 @@ export const CSelect = ({
 }: CSelectProps) => {
   const isControlled = props.value !== undefined;
   const [internalSelectedKey, setInternalSelectedKey] = useState(
-    props.defaultValue ?? ""
+    props.defaultValue ?? "",
   );
 
   const selectedKey = isControlled ? props.value! : internalSelectedKey;
 
   const findItem = useCallback(
     (key: string | undefined) => props.items.find((e) => e.key === key),
-    [props.items]
+    [props.items],
   );
 
   return (
@@ -55,10 +55,10 @@ export const CSelect = ({
         id={props.id}
         aria-label="Select"
         className={cn(
-          "bg-white data-placeholder:text-black!",
+          "bg-white data-placeholder:text-foreground!",
           props.width || "w-full",
           "hover:bg-accent hover:text-black!",
-          props.className
+          props.className,
         )}
       >
         <SelectValue placeholder={placeholder} />
@@ -111,7 +111,7 @@ export const CSelectController = forwardRef<
 
   const findItem = useCallback(
     (key: string | undefined) => props.items.find((e) => e.key === key),
-    [props.items]
+    [props.items],
   );
 
   return (

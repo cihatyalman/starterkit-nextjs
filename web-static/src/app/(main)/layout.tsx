@@ -3,6 +3,8 @@ import { getMetadata } from "@/lib/metadata";
 import { ScrollListener } from "@/core/helperx/scroll-listener/ScrollListener";
 import HtmlLangUpdater from "@/core/language-static/i18n/HtmlLangUpdater";
 import { ScrollToTop } from "@/components/custom/ScrollToTop";
+import { Footer } from "@/components/project/Footer";
+import { Header } from "@/components/project/Header";
 
 const title = "Starter Kit";
 const ogtitle = "Starter Kit | Next.js";
@@ -25,11 +27,11 @@ export default function MainLayout({
       <HtmlLangUpdater />
       <ScrollListener />
       <div className="min-h-svh flex flex-col">
-        {/* <Header /> */}
+        <Header />
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
       <ScrollToTop />
     </>

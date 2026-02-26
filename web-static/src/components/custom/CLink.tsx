@@ -5,6 +5,7 @@ import { AnchorHTMLAttributes } from "react";
 interface CLinkProps
   extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
   isUnderline?: boolean;
+  isHover?: boolean;
   isLink?: boolean;
 }
 
@@ -12,7 +13,7 @@ export const CLink = ({ isLink, ...props }: CLinkProps) => {
   return isLink ? <LinkComp {...props} /> : <HrefComp {...props} />;
 };
 
-const HrefComp = ({ isUnderline = true, ...props }: CLinkProps) => {
+const HrefComp = ({ isUnderline, isHover, ...props }: CLinkProps) => {
   let href = props.href.toString();
   if (href.startsWith("/")) href = process.env.NEXT_PUBLIC_BASE_PATH + href;
 
@@ -21,8 +22,9 @@ const HrefComp = ({ isUnderline = true, ...props }: CLinkProps) => {
       {...props}
       href={href}
       className={cn(
-        "cursor-pointer inline-block hover:text-blue-400",
-        isUnderline ? "underline" : "",
+        "cursor-pointer inline-block",
+        isUnderline && "underline",
+        isHover && "hover:text-blue-400",
         props.className,
       )}
     >
@@ -31,7 +33,7 @@ const HrefComp = ({ isUnderline = true, ...props }: CLinkProps) => {
   );
 };
 
-const LinkComp = ({ isUnderline = true, ...props }: CLinkProps) => {
+const LinkComp = ({ isUnderline, isHover, ...props }: CLinkProps) => {
   let href = props.href.toString();
   if (href.startsWith("/")) href = process.env.NEXT_PUBLIC_BASE_PATH + href;
 
@@ -40,8 +42,9 @@ const LinkComp = ({ isUnderline = true, ...props }: CLinkProps) => {
       {...props}
       href={href}
       className={cn(
-        "cursor-pointer inline-block hover:text-blue-400",
-        isUnderline ? "underline" : "",
+        "cursor-pointer inline-block",
+        isUnderline && "underline",
+        isHover && "hover:text-blue-400",
         props.className,
       )}
     >

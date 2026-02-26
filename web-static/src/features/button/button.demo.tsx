@@ -36,8 +36,7 @@ export const DemoButtons = () => {
           <CLink
             href="https://www.google.com"
             target="_blank"
-            isUnderline={false}
-            className="text-white hover:text-white text-sm h-9"
+            className="text-white text-sm h-9"
           >
             asChild
           </CLink>
