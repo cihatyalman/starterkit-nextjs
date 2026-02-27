@@ -9,7 +9,7 @@ npm i zustand # state-management (zustand)
 npm add react-hot-toast # toast için kütüphane + config (https://react-hot-toast.com/)
 # npm i date-fns # tarih işlemleri için
 # npm i @react-input/mask # Text maskelemek için
-# npm i next-intl # Çoklu dil için
+# npm i next-intl # Çoklu dil için (server)
 npm i next-themes # Tema için
 # npm i html-react-parser # HTML parse eder.(dangerouslySetInnerHTML yerine kullanilabilir)
 npm i react-icons # icon kütüphanesi

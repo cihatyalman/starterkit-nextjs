@@ -1,4 +1,5 @@
 import { Cover } from "@/features/cover";
+import { DemoImage } from "@/features/image";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,22 @@ export default function HomePage() {
       <section className="min-w-svw">
         <Cover />
       </section>
+      {/* Image */}
+      <section id="image">
+        <Title value="Image" />
+        <DemoImage />
+        <Hr />
+      </section>
+      <section id="language">
+        <Title value="Language" />
+        {/* <Hr /> */}
+      </section>
     </div>
   );
 }
+
+const Hr = () => <hr className="my-2 h-0.5 bg-gray-300" />;
+
+const Title = ({ value }: { value: string }) => {
+  return <h2 className="font-bold text-2xl mb-2">{value}</h2>;
+};

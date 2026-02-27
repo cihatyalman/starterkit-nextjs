@@ -20,4 +20,3 @@ export const Header = () => {
     </header>
   );
 };
-
