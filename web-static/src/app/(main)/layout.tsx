@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { getMetadata } from "@/utils/metadata";
 import { ScrollListener } from "@/infrastructure/helperx/scroll-listener/ScrollListener";
-import HtmlLangUpdater from "@/infrastructure/language-static/i18n/HtmlLangUpdater";
+import HtmlLangUpdater from "@/infrastructure/language/i18n/HtmlLangUpdater";
 import { ScrollToTop } from "@/components/custom/ScrollToTop";
 import { Header } from "@/shared/ui/Header";
 import { Footer } from "@/shared/ui/Footer";

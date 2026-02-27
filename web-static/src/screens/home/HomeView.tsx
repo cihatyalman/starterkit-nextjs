@@ -1,5 +1,5 @@
 import { CLink } from "@/components/custom/CLink";
-import { DEFAULT_LOCALE, LocaleType } from "@/infrastructure/language-static/i18n/types";
+import { DEFAULT_LOCALE, LocaleType } from "@/infrastructure/language/i18n/types";
 import { DemoAccordion } from "@/features/accordion";
 import { DemoButtons } from "@/features/button";
 import { DemoCarousel } from "@/features/carousel";

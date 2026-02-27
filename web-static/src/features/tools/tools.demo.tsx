@@ -11,10 +11,10 @@ import { CPopup, CPopupHandle } from "@/components/custom/CPopup";
 import { CLottie } from "@/components/DynamicLoader";
 import { SideDrawer, sideStore } from "@/shared/ui/SideDrawer";
 import { useTimer } from "@/infrastructure/hook/useTimer";
-import { getMessages } from "@/infrastructure/language-static/i18n/helpers";
-import { useClientLocale } from "@/infrastructure/language-static/i18n/helpers/client";
-import { LanguageSwitcher } from "@/infrastructure/language-static/i18n/LanguageSwitcher";
-import { ThemeButton } from "@/infrastructure/theme/ThemeButton";
+import { getMessages } from "@/infrastructure/language/i18n/helpers";
+import { useClientLocale } from "@/infrastructure/language/i18n/helpers/client";
+import { LanguageSwitcher } from "@/infrastructure/language/i18n/LanguageSwitcher";
+import { ThemeButton } from "@/lib/theme/ThemeButton";
 import { Pause, Play, Square } from "lucide-react";
 
 export const DemoTools = () => {
@@ -39,7 +39,7 @@ export const DemoTools = () => {
 
 const StickyBox = () => {
   return (
-    <div className={cn("sticky top-2", "h-fit border-2 p-3")}>
+    <div className={cn("sticky top-16", "h-fit border-2 p-3")}>
       <div className="text-center">
         <p>Sticky</p>
         <p className="text-sm">Yapışkan</p>
@@ -60,7 +60,7 @@ const BaseItem = (props: { title: string; children: React.ReactNode }) => {
 };
 
 const CustomTimerBlock = () => {
-  const timer = useTimer();
+  const timer = useTimer(500);
 
   return (
     <BaseItem title="CustomTimer örneği">
@@ -86,7 +86,7 @@ const CountdownBlock = () => {
   return (
     <BaseItem title="Countdown örneği">
       <CCountdown
-        duration={4}
+        duration={60*10}
         format={["hours", "minutes", "seconds"]}
         onChange={(e) => console.log(e)}
         onFinish={() => console.log("Finish")}
