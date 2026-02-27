@@ -1,4 +1,4 @@
-import { createSliceData } from "@/lib/store/redux/helper";
+import { createSliceData } from "@/lib/redux/helper";
 
 export const counterSlice = createSliceData({
   name: "counter",

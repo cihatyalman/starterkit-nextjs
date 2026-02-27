@@ -12,11 +12,11 @@ export const CitySchema = RawCitySchema.transform((raw) => ({
 export type City = z.infer<typeof CitySchema>;
 
 /* #region Helpers */
-export function parseCity(data: MyAny): City {
+export function parseCity(data: unknown): City {
   return CitySchema.parse(data);
 }
 
-export function parseCityList(data: MyAny): City[] {
+export function parseCityList(data: unknown): City[] {
   return z.array(CitySchema).parse(data);
 }
 /* #endregion */

@@ -3,7 +3,7 @@
 import { CButton } from "@/components/custom/CButton";
 import { CLink } from "@/components/custom/CLink";
 import { CTextButton } from "@/components/custom/CTextButton";
-import { delay } from "@/core/helpers";
+import { delay } from "@/infrastructure/helpers";
 import { Info } from "lucide-react";
 
 export const DemoButtons = () => {

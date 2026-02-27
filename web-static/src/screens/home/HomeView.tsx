@@ -1,4 +1,5 @@
-import { DEFAULT_LOCALE, LocaleType } from "@/core/language-static/i18n/types";
+import { CLink } from "@/components/custom/CLink";
+import { DEFAULT_LOCALE, LocaleType } from "@/infrastructure/language-static/i18n/types";
 import { DemoAccordion } from "@/features/accordion";
 import { DemoButtons } from "@/features/button";
 import { DemoCarousel } from "@/features/carousel";
@@ -13,9 +14,8 @@ import { DemoList } from "@/features/list";
 import { DemoSortableList } from "@/features/sortable-list";
 import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
-import { DemoTable } from "@/features/table/table.demo";
+import { DemoTable } from "@/features/table";
 import { DemoTools } from "@/features/tools";
-import { CLink } from "../custom/CLink";
 
 export const HomeView = ({ locale }: { locale?: LocaleType }) => {
   locale ||= DEFAULT_LOCALE;

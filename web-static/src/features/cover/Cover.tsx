@@ -1,5 +1,4 @@
-import { Brand } from "@/components/project/Brand";
-import { GithubButton } from "@/components/project/GithubButton";
+import { GithubButton } from "@/shared/ui/GithubButton";
 
 export const Cover = () => {
   return (

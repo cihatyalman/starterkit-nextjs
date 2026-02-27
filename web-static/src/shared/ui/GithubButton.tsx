@@ -1,7 +1,7 @@
 "use client";
 
+import { CButton } from "@/components/custom/CButton";
 import { cn } from "@/lib/utils";
-import { CButton } from "../custom/CButton";
 import { FaGithub } from "react-icons/fa";
 
 export const GithubButton = (props: { className?: string }) => {

@@ -3,12 +3,12 @@ import "@/styles/globals.css";
 import "@/styles/breakpoint.css";
 import "@/styles/base.css";
 import "@/styles/project.css";
-import { getMetadata } from "@/lib/metadata";
+import { getMetadata } from "@/utils/metadata";
 import { fontBase } from "@/assets/fonts";
-import { ReduxProvider } from "@/lib/store/redux/provider";
-import { ThemeProvider } from "@/core/theme/provider";
+import { ReduxProvider } from "@/lib/redux/provider";
+import { ThemeProvider } from "@/infrastructure/theme/provider";
 import { Toaster } from "react-hot-toast";
-import { DEFAULT_LOCALE } from "@/core/language-static/i18n/types";
+import { DEFAULT_LOCALE } from "@/infrastructure/language-static/i18n/types";
 
 export const metadata: Metadata = getMetadata.root({
   icons: { icon: "/favicon.ico", shortcut: "/favicon.ico" },

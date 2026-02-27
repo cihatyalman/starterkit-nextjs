@@ -1,5 +1,5 @@
-import { HomeView } from "@/components/page/HomeView";
-import { LocaleParamsType } from "@/core/language-static/i18n/types";
+import { HomeView } from "@/screens/home/HomeView";
+import { LocaleParamsType } from "@/infrastructure/language-static/i18n/types";
 
 export default async function HomePage({
   params,

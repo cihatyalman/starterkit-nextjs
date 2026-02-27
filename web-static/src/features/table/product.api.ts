@@ -1,4 +1,4 @@
-import { apiService } from "@/core/helpers/api";
+import { apiService } from "@/infrastructure/helpers/api";
 import { parseProductList } from "./product.model";
 
 const mainPath = "/products";

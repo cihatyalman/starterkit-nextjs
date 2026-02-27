@@ -9,12 +9,12 @@ import { CLoading } from "@/components/custom/CLoading";
 import { COtpPopup } from "@/components/custom/COtpPopup";
 import { CPopup, CPopupHandle } from "@/components/custom/CPopup";
 import { CLottie } from "@/components/DynamicLoader";
-import { SideDrawer, sideStore } from "@/components/project/SideDrawer";
-import { useTimer } from "@/core/hook/useTimer";
-import { getMessages } from "@/core/language-static/i18n/helpers";
-import { useClientLocale } from "@/core/language-static/i18n/helpers/client";
-import { LanguageSwitcher } from "@/core/language-static/i18n/LanguageSwitcher";
-import { ThemeButton } from "@/core/theme/ThemeButton";
+import { SideDrawer, sideStore } from "@/shared/ui/SideDrawer";
+import { useTimer } from "@/infrastructure/hook/useTimer";
+import { getMessages } from "@/infrastructure/language-static/i18n/helpers";
+import { useClientLocale } from "@/infrastructure/language-static/i18n/helpers/client";
+import { LanguageSwitcher } from "@/infrastructure/language-static/i18n/LanguageSwitcher";
+import { ThemeButton } from "@/infrastructure/theme/ThemeButton";
 import { Pause, Play, Square } from "lucide-react";
 
 export const DemoTools = () => {

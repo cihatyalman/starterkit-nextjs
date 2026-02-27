@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { mapBase, RawBaseSchema } from "./base.model";
 import { dataSchemes } from "./_schema";
-import { toDateFromString } from "@/core/helpers/date";
+import { toDateFromString } from "@/infrastructure/helpers/date";
 
 const RawUserSchema = RawBaseSchema.extend({
   role: z.number(),

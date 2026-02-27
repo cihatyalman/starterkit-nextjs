@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useTimer } from "@/core/hook/useTimer";
+import { useEffect, useState } from "react";
+import { useTimer } from "@/infrastructure/hook/useTimer";
 import {
   Carousel,
   CarouselApi,

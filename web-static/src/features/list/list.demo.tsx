@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { delay } from "@/core/helpers";
+import { delay } from "@/infrastructure/helpers";
 import { CInfiniteList } from "@/components/custom/CInfiniteList";
 
 export const DemoList = () => {

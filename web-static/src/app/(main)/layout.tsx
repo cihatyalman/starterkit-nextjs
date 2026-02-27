@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import { getMetadata } from "@/lib/metadata";
-import { ScrollListener } from "@/core/helperx/scroll-listener/ScrollListener";
-import HtmlLangUpdater from "@/core/language-static/i18n/HtmlLangUpdater";
+import { getMetadata } from "@/utils/metadata";
+import { ScrollListener } from "@/infrastructure/helperx/scroll-listener/ScrollListener";
+import HtmlLangUpdater from "@/infrastructure/language-static/i18n/HtmlLangUpdater";
 import { ScrollToTop } from "@/components/custom/ScrollToTop";
-import { Footer } from "@/components/project/Footer";
-import { Header } from "@/components/project/Header";
+import { Header } from "@/shared/ui/Header";
+import { Footer } from "@/shared/ui/Footer";
 
 const title = "Starter Kit";
 const ogtitle = "Starter Kit | Next.js";

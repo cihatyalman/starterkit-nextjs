@@ -1,4 +1,4 @@
-import { CLink } from "../custom/CLink";
+import { CLink } from "@/components/custom/CLink";
 
 export const Brand = (props: { className?: string }) => {
   return (
