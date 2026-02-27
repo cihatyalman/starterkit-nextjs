@@ -88,7 +88,7 @@ const CountdownBlock = () => {
       <CCountdown
         duration={60*10}
         format={["hours", "minutes", "seconds"]}
-        onChange={(e) => console.log(e)}
+        // onChange={(e) => console.log(e)}
         onFinish={() => console.log("Finish")}
       />
     </BaseItem>
@@ -209,7 +209,7 @@ const LanguageBlock = () => {
     <BaseItem title="Çoklu dil örneği">
       <div className="flex flex-col gap-2 items-center">
         <p className="text-lg">{t.home.welcome}</p>
-        <LanguageSwitcher extraPath="#others" />
+        <LanguageSwitcher extraPath="#tools" />
       </div>
     </BaseItem>
   );

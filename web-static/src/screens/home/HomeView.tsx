@@ -1,5 +1,8 @@
 import { CLink } from "@/components/custom/CLink";
-import { DEFAULT_LOCALE, LocaleType } from "@/infrastructure/language/i18n/types";
+import {
+  DEFAULT_LOCALE,
+  LocaleType,
+} from "@/infrastructure/language/i18n/types";
 import { DemoAccordion } from "@/features/accordion";
 import { DemoButtons } from "@/features/button";
 import { DemoCarousel } from "@/features/carousel";
@@ -16,6 +19,7 @@ import { DemoRedux } from "@/features/state-management/redux";
 import { DemoZustand } from "@/features/state-management/zustand";
 import { DemoTable } from "@/features/table";
 import { DemoTools } from "@/features/tools";
+import { ExternalLink } from "lucide-react";
 
 export const HomeView = ({ locale }: { locale?: LocaleType }) => {
   locale ||= DEFAULT_LOCALE;
@@ -57,11 +61,17 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
       *:flex-1 *:min-w-sm *:border-b-2 *:border-gray-300 *:pb-3"
       >
         <div id="zustand">
-          <Title value={"State Management (zustand)"} />
+          <Title
+            value={"State Management (zustand)"}
+            // path="/state-managements/zustand"
+          />
           <DemoZustand />
         </div>
         <div id="redux">
-          <Title value={"State Management (redux)"} />
+          <Title
+            value={"State Management (redux)"}
+            // path="/state-managements/redux"
+          />
           <DemoRedux />
         </div>
       </section>
@@ -151,8 +161,25 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
 
 const Hr = () => <hr className="my-2 h-0.5 bg-gray-300" />;
 
-const Title = ({ value }: { value: string }) => {
-  return <h2 className="font-bold text-2xl mb-2">{value}</h2>;
+const Title = ({ value, ...props }: { value: string; path?: string }) => {
+  let fullUrl;
+  if (props.path) {
+    fullUrl =
+      process.env.NEXT_PUBLIC_GITHUB_URL +
+      "/web-static/src/features" +
+      props.path;
+  }
+
+  return (
+    <div className="flex gap-2">
+      <h2 className="font-bold text-2xl mb-2">{value}</h2>
+      {fullUrl && (
+        <CLink href={fullUrl} target="_blank" className="px-1">
+          <ExternalLink className="mt-1.5" size={20} />
+        </CLink>
+      )}
+    </div>
+  );
 };
 
 const SectionButton = (props: { id: string; title: string }) => {

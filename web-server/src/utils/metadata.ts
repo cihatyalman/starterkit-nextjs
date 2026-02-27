@@ -9,7 +9,7 @@ import {
 /* #region Sabitler */
 const siteName = "StarterKit";
 const ogimage = process.env.NEXT_PUBLIC_BASE_URL + "/public/og-image.webp";
-const twitterSite = "@starterkit-static";
+const twitterSite = "@starterkit";
 /* #endregion */
 
 /* #region Props */
