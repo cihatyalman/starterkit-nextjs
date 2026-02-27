@@ -4,6 +4,7 @@ import { ScrollListener } from "@/infrastructure/helperx/scroll-listener/ScrollL
 import { ScrollToTop } from "@/components/custom/ScrollToTop";
 import { Header } from "@/shared/ui/Header";
 import { Footer } from "@/shared/ui/Footer";
+import { LanguageProvider } from "@/lib/language/i18n/provider";
 
 const title = "Starter Kit";
 const ogtitle = "Starter Kit | Next.js";
@@ -23,15 +24,17 @@ export default function MainLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <ScrollListener />
-      <div className="min-h-svh flex flex-col">
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-      </div>
-      <ScrollToTop />
+      <LanguageProvider>
+        <ScrollListener />
+        <div className="min-h-svh flex flex-col">
+          <Header />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <ScrollToTop />
+      </LanguageProvider>
     </>
   );
 }

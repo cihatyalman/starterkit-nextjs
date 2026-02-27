@@ -1,5 +1,6 @@
 import { Cover } from "@/features/cover";
 import { DemoImage } from "@/features/image";
+import { DemoTools } from "@/features/tools";
 
 export default function HomePage() {
   return (
@@ -17,10 +18,12 @@ export default function HomePage() {
         <DemoImage />
         <Hr />
       </section>
-      <section id="language">
-        <Title value="Language" />
+      <section id="tools">
+        <Title value="Tools" />
+        <DemoTools />
         {/* <Hr /> */}
       </section>
+      <div className="h-4" />
     </div>
   );
 }

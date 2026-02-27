@@ -1,15 +1,11 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { CButton } from "@/components/custom/CButton";
 import { DEFAULT_LOCALE, LOCALES, LocaleType } from "./types";
 import { useClientLocale } from "./helpers/client";
-import { Button } from "@/components/ui/button";
 
-export const LanguageSwitcher = (props: {
-  extraPath?: string;
-  className?: string;
-}) => {
+export const LanguageSwitcher = (props: { extraPath?: string }) => {
   const locale = useClientLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -33,18 +29,12 @@ export const LanguageSwitcher = (props: {
   }
 
   return (
-    <Button
+    <CButton
+      variant="outline"
+      className="w-9"
       onClick={() => handleChangeLocale(locale === "tr" ? "en" : "tr")}
-      name="LanguageButton"
-      aria-label="LanguageButton"
-      size="icon"
-      className={cn(
-        "cursor-pointer border",
-        "bg-background hover:bg-accent text-foreground",
-        props.className,
-      )}
     >
       {locale.toUpperCase()}
-    </Button>
+    </CButton>
   );
 };

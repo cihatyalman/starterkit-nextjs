@@ -22,8 +22,9 @@ export const Cover = () => {
       <GithubButton />
       <div className="h-10" />
       <p className="absolute bottom-0 text-sm sm:text-base text-accent-foreground">
-        Sadece server olan özellikler burada bulunur. Tüm özellikler için{" "}
-        <CLink href={process.env.NEXT_PUBLIC_STATIC_URL || ""} isUnderline target="_blank˝">
+        Sadece <strong>statik</strong> bileşenlerin <strong>server</strong>{" "}
+        alternatifleri burada bulunur. Tüm bileşenler(statik) için{" "}
+        <CLink href={process.env.NEXT_PUBLIC_STATIC_URL || ""} isUnderline>
           buradaki
         </CLink>{" "}
         sayfayı ziyaret edebilirsiniz.

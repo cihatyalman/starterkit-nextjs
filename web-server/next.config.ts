@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
@@ -48,4 +49,8 @@ const securityHeaders = [
   },
 ];
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin({
+  requestConfig: "./src/lib/language/i18n/request.ts",
+});
+
+export default withNextIntl(nextConfig);
