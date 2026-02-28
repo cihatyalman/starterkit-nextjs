@@ -63,94 +63,94 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
         <div id="zustand">
           <Title
             value={"State Management (zustand)"}
-            // path="/state-managements/zustand"
+            path="/state-managements/zustand"
           />
           <DemoZustand />
         </div>
         <div id="redux">
           <Title
             value={"State Management (redux)"}
-            // path="/state-managements/redux"
+            path="/state-managements/redux"
           />
           <DemoRedux />
         </div>
       </section>
       {/* Buttons */}
       <section id="buttons">
-        <Title value="Buttons" />
+        <Title value="Buttons" path="/buttons" />
         <DemoButtons />
         <Hr />
       </section>
       {/* Inputs */}
       <section id="inputs">
-        <Title value="Inputs" />
+        <Title value="Inputs" path="/inputs" />
         <DemoInputs />
         <div className="h-3" />
         <Hr />
       </section>
       {/* Form */}
       <section id="form">
-        <Title value="Form" />
+        <Title value="Form" path="/form" />
         <DemoForm />
         <Hr />
       </section>
       {/* Tools */}
       <section id="tools">
-        <Title value="Tools" />
+        <Title value="Tools" path="/tools" />
         <DemoTools />
         <Hr />
       </section>
       {/* Accordion */}
       <section id="accordion">
-        <Title value="Accordion" />
+        <Title value="Accordion" path="/accordion" />
         <DemoAccordion />
         <Hr />
       </section>
       {/* Carousel */}
       <section id="carousel">
-        <Title value="Carousel" />
+        <Title value="Carousel" path="/carousel" />
         <DemoCarousel />
         <Hr />
       </section>
       {/* FlowingCarousel */}
       <section id="flowing-carousel">
-        <Title value="FlowingCarousel" />
+        <Title value="FlowingCarousel" path="/flowing-carousel" />
         <DemoFlowingCarousel />
         <Hr />
       </section>
       {/* List */}
       <section id="list">
-        <Title value="List" />
+        <Title value="List" path="/list" />
         <DemoList />
         <Hr />
       </section>
       {/* Grid */}
       <section id="grid">
-        <Title value="Grid" />
+        <Title value="Grid" path="/grid" />
         <DemoGrid />
         <Hr />
       </section>
       {/* SortableList */}
       <section id="sortable-list">
-        <Title value="SortableList" />
+        <Title value="SortableList" path="/sortable-list" />
         <DemoSortableList />
         <Hr />
       </section>
       {/* Image */}
       <section id="image">
-        <Title value="Image" />
+        <Title value="Image" path="/image" />
         <DemoImage />
         <Hr />
       </section>
       {/* Graphic */}
       <section id="graphic">
-        <Title value="Graphic" />
+        <Title value="Graphic" path="/graphic" />
         <DemoGraphic />
         <Hr />
       </section>
       {/* Table */}
       <section id="table">
-        <Title value="Table" />
+        <Title value="Table" path="/table" />
         <DemoTable />
         {/* <Hr /> */}
       </section>

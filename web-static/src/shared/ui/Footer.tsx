@@ -24,6 +24,19 @@ export const Footer = () => {
           </span>{" "}
           ziyaret edebilirsiniz.
         </p>
+        <p className="text-accent-foreground text-sm">
+          Özelliklerin server alternatiflerini görmek için{" "}
+          <span>
+            <CLink
+              href={process.env.NEXT_PUBLIC_SERVER_URL || ""}
+              target="_blank"
+              isUnderline
+            >
+              bu sayfayı
+            </CLink>
+          </span>{" "}
+          ziyaret edebilirsiniz.
+        </p>
       </div>
       <Copyright />
     </footer>
