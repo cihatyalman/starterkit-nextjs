@@ -3,11 +3,11 @@
 
 #!/bin/bash
 
-npm i zod # model scheme
-npm i zustand # state-management (zustand)
-npm add react-hot-toast # toast için kütüphane + config (https://react-hot-toast.com/)
-npm i next-themes # Tema için
-npm i react-icons # icon kütüphanesi
+# npm i zod # model scheme
+# npm i zustand # state-management (zustand)
+# npm add react-hot-toast # toast için kütüphane + config (https://react-hot-toast.com/)
+# npm i next-themes # Tema için
+# npm i react-icons # icon kütüphanesi
 
 # npm i @reduxjs/toolkit react-redux # state-management (redux)
 # npm i date-fns # tarih işlemleri için
@@ -27,7 +27,7 @@ npm i react-icons # icon kütüphanesi
 # npm i next-intl # Çoklu dil için (server)
 
 # shadcn paketleri
-npx shadcn@latest init # component kutuphanesi (gray)
+# npx shadcn@latest init # component kutuphanesi (gray)
 # npx shadcn@latest add button checkbox dialog input input-otp label radio-group field sheet slider textarea select calendar popover command accordion carousel resizable table dropdown-menu
 
 
