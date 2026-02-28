@@ -35,10 +35,12 @@ interface FileOptions extends BaseOptions {
 
 /* #region All Request Types */
 const get = async (path: string, options: GetOptions = {}) => {
+  const isServer = typeof window === "undefined";
+
   const fullUrl = buildUrl(path, options.params);
   const requestInit: RequestInit = {
     method: "GET",
-    cache: options.cache || "no-store",
+    cache: options.cache || (isServer ? undefined : "no-store"),
     headers: { ...(options.headers || {}) },
   };
 
