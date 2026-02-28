@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { CButton } from "@/components/custom/CButton";
 import { CImage } from "@/components/custom/CImage";
 import {
@@ -14,7 +15,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { useRef } from "react";
+import { ServerLinkPopover } from "@/shared/ui/ServerLinkPopover";
 import { MdEdit } from "react-icons/md";
 
 export const DemoImage = () => {
@@ -32,7 +33,7 @@ export const DemoImage = () => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-2 *:text-center">
+    <div className="flex flex-wrap gap-2 *:text-center text-sm">
       <div>
         <CImage
           url={images[0]}
@@ -118,7 +119,10 @@ export const DemoImage = () => {
           />
         </div>
         <CImageListPreview ref={previewRef} images={images} />
-        <p>Image List Preview (Click)</p>
+        <div className="flex gap-1 justify-center items-center">
+          <p>Image List Preview (Click)</p>
+          <ServerLinkPopover path="#image" />
+        </div>
       </div>
     </div>
   );

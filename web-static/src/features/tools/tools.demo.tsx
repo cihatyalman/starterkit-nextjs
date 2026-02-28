@@ -16,6 +16,7 @@ import { useClientLocale } from "@/infrastructure/language/i18n/helpers/client";
 import { LanguageSwitcher } from "@/infrastructure/language/i18n/LanguageSwitcher";
 import { ThemeButton } from "@/lib/theme/ThemeButton";
 import { Pause, Play, Square } from "lucide-react";
+import { ServerLinkPopover } from "@/shared/ui/ServerLinkPopover";
 
 export const DemoTools = () => {
   return (
@@ -48,13 +49,20 @@ const StickyBox = () => {
   );
 };
 
-const BaseItem = (props: { title: string; children: React.ReactNode }) => {
+const BaseItem = (props: {
+  title: string;
+  info?: React.ReactNode;
+  children: React.ReactNode;
+}) => {
   return (
-    <div className="flex flex-col items-center gap-2 p-2 border-2 w-44 h-44">
+    <div className="flex flex-col items-center gap-2 p-2 border-2 w-44 h-44 text-sm">
       <div className="flex flex-1 justify-center items-center">
         {props.children}
       </div>
-      <p>{props.title}</p>
+      <div className="flex gap-1 justify-center items-center">
+        <p className="line-clamp-1">{props.title}</p>
+        {props.info}
+      </div>
     </div>
   );
 };
@@ -86,7 +94,7 @@ const CountdownBlock = () => {
   return (
     <BaseItem title="Countdown örneği">
       <CCountdown
-        duration={60*10}
+        duration={60 * 10}
         format={["hours", "minutes", "seconds"]}
         // onChange={(e) => console.log(e)}
         onFinish={() => console.log("Finish")}
@@ -206,7 +214,10 @@ const LanguageBlock = () => {
   const t = getMessages(locale);
 
   return (
-    <BaseItem title="Çoklu dil örneği">
+    <BaseItem
+      title="Çoklu dil örneği"
+      info={<ServerLinkPopover path="#tools" />}
+    >
       <div className="flex flex-col gap-2 items-center">
         <p className="text-lg">{t.home.welcome}</p>
         <LanguageSwitcher extraPath="#tools" />
