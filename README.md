@@ -4,6 +4,8 @@ Projelerinizde kullanabileceğiniz başlangıç kiti. [ Son güncelleme tarihi: 
 
 Proje export mod(SSG) olarak tasarlanmıştır. Bu sayede bütün proje türlerinde kolaylıkla kullanılabilir. Ek olarak server mod(SSR) için bazı özelliklerin alternatifleri eklenmiştir.
 
+Siteyi görüntülemek için [bu bağlantıyı](https://cihatyalman.github.io/starterkit-nextjs) kullanabilirsiniz.
+
 #
 
 <br />
@@ -56,16 +58,16 @@ Projede kullanılan bileşenler: button checkbox dialog input input-otp label ra
 
 # Mimari
 
-- #### [app](https://github.com/starterkit-nextjs/web-static/src/app): routing, layout, metadata gibi yapılar burada bulunur.
-- #### [screens](https://github.com/starterkit-nextjs/web-static/src/screens): Sayfa tasarımları ve sayfa içi özel bileşenler burada bulunur. Buradaki sayfalar 'app' içinden import edilir.
-- #### [features](https://github.com/starterkit-nextjs/web-static/src/features): Özellikler ve özellik dosyaları burada bulunur. Buradaki dosyalar 'screens' içinden import edilir.
-- #### [shared](https://github.com/starterkit-nextjs/web-static/src/shared): Proje genelinde ortak kullanılan dosyalar burada bulunur.
-- #### [components](https://github.com/starterkit-nextjs/web-static/src/components): Projeden bağımsız, her projede kullanılabilen bileşenler burada bulunur.
-- #### [infrastructure](https://github.com/starterkit-nextjs/web-static/src/infrastructure): Projeden bağımsız, her projede kullanılabilen araçlar/sistemler burada bulunur.
-- #### [utils](https://github.com/starterkit-nextjs/web-static/src/utils): Projeye özel yardımcı araçlar burada bulunur.
-- #### [lib](https://github.com/starterkit-nextjs/web-static/src/lib): Kütüphane ayarları burada bulunur.
-- #### [assets](https://github.com/starterkit-nextjs/web-static/src/assets): Public olmayan statik dosyalar burada bulunur.
-- #### [styles](https://github.com/starterkit-nextjs/web-static/src/styles): css dosyaları burada bulunur.
-- #### [types](https://github.com/starterkit-nextjs/web-static/src/types): Proje genelinde kullanılan global type'lar burada bulunur.
+- #### [app](https://github.com/starterkit-nextjs/tree/master/web-static/src/app): routing, layout, metadata gibi yapılar burada bulunur.
+- #### [screens](https://github.com/starterkit-nextjs/tree/master/web-static/src/screens): Sayfa tasarımları ve sayfa içi özel bileşenler burada bulunur. Buradaki sayfalar 'app' içinden import edilir.
+- #### [features](https://github.com/starterkit-nextjs/tree/master/web-static/src/features): Özellikler ve özellik dosyaları burada bulunur. Buradaki dosyalar 'screens' içinden import edilir.
+- #### [shared](https://github.com/starterkit-nextjs/tree/master/web-static/src/shared): Proje genelinde ortak kullanılan dosyalar burada bulunur.
+- #### [components](https://github.com/starterkit-nextjs/tree/master/web-static/src/components): Projeden bağımsız, her projede kullanılabilen bileşenler burada bulunur.
+- #### [infrastructure](https://github.com/starterkit-nextjs/tree/master/web-static/src/infrastructure): Projeden bağımsız, her projede kullanılabilen araçlar/sistemler burada bulunur.
+- #### [utils](https://github.com/starterkit-nextjs/tree/master/web-static/src/utils): Projeye özel yardımcı araçlar burada bulunur.
+- #### [lib](https://github.com/starterkit-nextjs/tree/master/web-static/src/lib): Kütüphane ayarları burada bulunur.
+- #### [assets](https://github.com/starterkit-nextjs/tree/master/web-static/src/assets): Public olmayan statik dosyalar burada bulunur.
+- #### [styles](https://github.com/starterkit-nextjs/tree/master/web-static/src/styles): css dosyaları burada bulunur.
+- #### [types](https://github.com/starterkit-nextjs/tree/master/web-static/src/types): Proje genelinde kullanılan global type'lar burada bulunur.
 
 #

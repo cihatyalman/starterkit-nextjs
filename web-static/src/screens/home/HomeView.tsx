@@ -63,27 +63,27 @@ export const HomeView = ({ locale }: { locale?: LocaleType }) => {
         <div id="zustand">
           <Title
             value={"State Management (zustand)"}
-            path="/state-managements/zustand"
+            path="/state-management/zustand"
           />
           <DemoZustand />
         </div>
         <div id="redux">
           <Title
             value={"State Management (redux)"}
-            path="/state-managements/redux"
+            path="/state-management/redux"
           />
           <DemoRedux />
         </div>
       </section>
       {/* Buttons */}
       <section id="buttons">
-        <Title value="Buttons" path="/buttons" />
+        <Title value="Buttons" path="/button" />
         <DemoButtons />
         <Hr />
       </section>
       {/* Inputs */}
       <section id="inputs">
-        <Title value="Inputs" path="/inputs" />
+        <Title value="Inputs" path="/input" />
         <DemoInputs />
         <div className="h-3" />
         <Hr />
@@ -166,7 +166,7 @@ const Title = ({ value, ...props }: { value: string; path?: string }) => {
   if (props.path) {
     fullUrl =
       process.env.NEXT_PUBLIC_GITHUB_URL +
-      "/web-static/src/features" +
+      "/tree/master/web-static/src/features" +
       props.path;
   }
 
