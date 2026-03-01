@@ -29,8 +29,6 @@ export const Cover = () => {
         </CLink>{" "}
         sayfayı ziyaret edebilirsiniz.
       </p>
-      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-red-500/10 blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-cyan-500/10 blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
     </div>
   );
 };
