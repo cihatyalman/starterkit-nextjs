@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://cihatyalman.github.io/starterkit-nextjs/sitemap.xml

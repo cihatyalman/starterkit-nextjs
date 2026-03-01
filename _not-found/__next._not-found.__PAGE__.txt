@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/starterkit-nextjs/_next/static/chunks/ca902c60b125810a.js","/starterkit-nextjs/_next/static/chunks/b27cf2d37f654500.js","/starterkit-nextjs/_next/static/chunks/47e710fb0489126c.js","/starterkit-nextjs/_next/static/chunks/a2dfb6fc5208ab9b.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"buildId":"21Ccu9gyMUk5hC46lCH0I","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-svh flex flex-col justify-center items-center","children":[["$","h1",null,{"className":"font-bold text-4xl sm:text-5xl","children":"404"}],["$","div",null,{"className":"h-2"}],["$","p",null,{"className":"text-lg sm:text-xl text-muted-foreground","children":"Aradığınız sayfa bulunamadı"}],["$","div",null,{"className":"h-6 sm:h-8"}],["$","a",null,{"href":"/","className":"px-5 py-3 rounded-full bg-foreground hover:bg-foreground/80 font-semibold text-background scale-80 sm:scale-100","children":"Ana Sayfaya Dön"}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
+4:null
