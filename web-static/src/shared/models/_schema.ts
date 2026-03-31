@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-const datetime = z.string().nullable().optional().catch(null);
+const datetime = z.string().nullish().catch(null);
 
 const record = (defaultt: Record<string, MyAny> = {}) =>
-  z.record(z.string(), z.any()).nullable().optional().catch(defaultt);
+  z.record(z.string(), z.any()).nullish().catch(defaultt);
 
 const fixedNumber = (digit: number = 2) =>
   z.coerce

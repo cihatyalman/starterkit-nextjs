@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { dataSchemes } from "./_schema";
-import { toDateFromString } from "@/infrastructure/helpers/date";
+import { toDateFromString } from "@/core/helpers/date";
 
 export const RawBaseSchema = z.object({
   id: z.string().optional(),

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
-import "@/styles/breakpoint.css";
-import "@/styles/base.css";
-import "@/styles/project.css";
-import { getMetadata } from "@/utils/metadata";
+import "@/shared/styles/globals.css";
+import "@/shared/styles/breakpoint.css";
+import "@/shared/styles/base.css";
+import "@/shared/styles/project.css";
+import { getMetadata } from "@/shared/utils/metadata";
 import { fontBase } from "@/assets/fonts";
 import { useLocale } from "next-intl";
 

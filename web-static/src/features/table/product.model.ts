@@ -6,8 +6,8 @@ const RawProductSchema = z.object({
   title: z.string(),
   price: dataSchemes.fixedNumber(2),
   description: z.string(),
-  category: z.string(),
-  image: z.string(),
+  category: dataSchemes.record(),
+  images: z.array(z.string()).nullish().default([]),
 });
 
 export const ProductSchema = RawProductSchema.transform((raw) => ({
@@ -15,8 +15,8 @@ export const ProductSchema = RawProductSchema.transform((raw) => ({
   title: raw.title,
   price: raw.price,
   description: raw.description,
-  category: raw.category,
-  image: raw.image,
+  category: raw.category?.name ?? "-",
+  images: raw.images,
 }));
 export type Product = z.infer<typeof ProductSchema>;
 
@@ -28,11 +28,4 @@ export function parseProduct(data: MyAny): Product {
 export function parseProductList(data: MyAny): Product[] {
   return z.array(ProductSchema).parse(data);
 }
-/* #endregion */
-
-/* #region Write */
-export const AddOrUpdateProductSchema = z.object({
-  newFullname: z.string(),
-});
-export type AddOrUpdateProduct = z.infer<typeof AddOrUpdateProductSchema>;
 /* #endregion */

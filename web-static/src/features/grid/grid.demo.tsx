@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { delay } from "@/infrastructure/helpers";
+import { delay } from "@/core/helpers";
 import { CInfiniteGrid } from "@/components/custom/CInfiniteGrid";
 
 export const DemoGrid = () => {

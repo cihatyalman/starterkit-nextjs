@@ -1,7 +1,7 @@
 import {
   LOCALE_PARAMS_LIST,
   LocaleParamsType,
-} from "@/infrastructure/language/i18n/types";
+} from "@/core/language/i18n/types";
 
 export const dynamicParams = false;
 

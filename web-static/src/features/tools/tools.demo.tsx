@@ -9,14 +9,14 @@ import { CLoading } from "@/components/custom/CLoading";
 import { COtpPopup } from "@/components/custom/COtpPopup";
 import { CPopup, CPopupHandle } from "@/components/custom/CPopup";
 import { CLottie } from "@/components/DynamicLoader";
-import { SideDrawer, sideStore } from "@/shared/ui/SideDrawer";
-import { useTimer } from "@/infrastructure/hook/useTimer";
-import { getMessages } from "@/infrastructure/language/i18n/helpers";
-import { useClientLocale } from "@/infrastructure/language/i18n/helpers/client";
-import { LanguageSwitcher } from "@/infrastructure/language/i18n/LanguageSwitcher";
+import { SideDrawer, sideStore } from "@/components/common/SideDrawer";
+import { useTimer } from "@/core/hook/useTimer";
+import { getMessages } from "@/core/language/i18n/helpers";
+import { useClientLocale } from "@/core/language/i18n/helpers/client";
+import { LanguageSwitcher } from "@/core/language/i18n/LanguageSwitcher";
 import { ThemeButton } from "@/lib/theme/ThemeButton";
 import { Pause, Play, Square } from "lucide-react";
-import { ServerLinkPopover } from "@/shared/ui/ServerLinkPopover";
+import { ServerLinkPopover } from "@/components/common/ServerLinkPopover";
 
 export const DemoTools = () => {
   return (

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { CircleArrowUp } from "lucide-react";
-import { scrollStore } from "@/infrastructure/helperx/scroll-listener/scroll.store";
+import { scrollStore } from "@/core/helperx/scroll-listener/scroll.store";
 
 export const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);

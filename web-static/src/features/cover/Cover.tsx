@@ -1,4 +1,4 @@
-import { GithubButton } from "@/shared/ui/GithubButton";
+import { GithubButton } from "@/components/common/GithubButton";
 
 export const Cover = () => {
   return (

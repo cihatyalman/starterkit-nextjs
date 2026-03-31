@@ -15,7 +15,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { ServerLinkPopover } from "@/shared/ui/ServerLinkPopover";
+import { ServerLinkPopover } from "@/components/common/ServerLinkPopover";
 import { MdEdit } from "react-icons/md";
 
 export const DemoImage = () => {

@@ -7,6 +7,7 @@ import { CDataTable, CTableHeader } from "@/components/custom/CDataTable";
 import { Product } from "./product.model";
 import { CImage } from "@/components/custom/CImage";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getRange } from "@/core/helpers/number";
 
 export const DemoTable = () => {
   return (
@@ -21,23 +22,33 @@ export const DemoTable = () => {
 const productsPromise = apiProduct.getList();
 const DataComp = () => {
   const dataList = use(productsPromise);
+  const columnKeys = [
+    "id",
+    "images",
+    "category",
+    "price",
+    "title",
+    "description",
+  ];
+  const columnTitles = [
+    "Id",
+    "Resim",
+    "Kategori",
+    "Fiyat",
+    "Başlık",
+    "Açıklama",
+  ];
+
   return (
     <CDataTable<Product>
       data={dataList}
       columnOptions={{
-        columnKeys: [
-          "id",
-          "image",
-          "category",
-          "price",
-          "title",
-          "description",
-        ],
-        editColums: (c) => {
-          for (const i of [0, 3, 4]) {
-            c[i].header = ({ column }) => (
-              <CTableHeader column={column} isSorted>
-                {(c[i] as MyAny)["accessorKey"]}
+        columnKeys: columnKeys,
+        editColums: (columns) => {
+          for (const i of getRange(columns.length)) {
+            columns[i].header = ({ column }) => (
+              <CTableHeader column={column} isSorted={[0, 3, 4].includes(i)}>
+                {columnTitles[i]}
               </CTableHeader>
             );
           }
@@ -52,13 +63,16 @@ const DataComp = () => {
             case "description":
               result = truncateText(value, 100);
               break;
-            case "image":
+            case "images":
               result = (
-                <CImage
-                  url={value}
-                  object="object-contain"
-                  className="h-6 w-full max-w-10 p-0"
-                />
+                <div className="h-10 max-w-20 flex justify-center">
+                  <CImage
+                    url={value[0]}
+                    object="object-contain"
+                    rounded="rounded-sm"
+                    className="h-full"
+                  />
+                </div>
               );
               break;
           }

@@ -1,6 +1,6 @@
 "use client";
 
-import { FlowingCarousel } from "@/shared/ui/FlowingCarousel";
+import { FlowingCarousel } from "@/components/common/FlowingCarousel";
 
 export const DemoFlowingCarousel = (props: { className?: string }) => {
   const tempList = Array.from({ length: 3 }, (_, i) => i);

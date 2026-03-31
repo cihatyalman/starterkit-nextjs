@@ -5,8 +5,8 @@ import { useCallback, useState } from "react";
 import Cropper from "react-easy-crop";
 import { Button } from "../ui/button";
 import { Slider } from "../ui/slider";
-import { showToast } from "@/infrastructure/helperx/toast";
-import { getDeviceInfo } from "@/infrastructure/helpers";
+import { showToast } from "@/core/helperx/toast";
+import { getDeviceInfo } from "@/core/helpers";
 import {
   Dialog,
   DialogContent,

@@ -1,5 +1,5 @@
+import { GithubButton } from "@/components/common/GithubButton";
 import { CLink } from "@/components/custom/CLink";
-import { GithubButton } from "@/shared/ui/GithubButton";
 
 export const Cover = () => {
   return (
