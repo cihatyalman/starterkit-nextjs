@@ -1,0 +1,22 @@
+html,
+body,
+:root {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+ul ul {
+  list-style: circle;
+  padding-left: 1.5rem;
+}
+ul ul ul {
+  list-style: square;
+  padding-left: 1.5rem;
+}
+
+:focus-visible {
+  @apply ring-1;
+}
