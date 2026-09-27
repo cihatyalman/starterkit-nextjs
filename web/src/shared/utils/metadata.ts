@@ -16,10 +16,10 @@ const twitterSite = "@starterkit";
 interface RootMetadataProps {
   icons?: IconURL | Icon[] | Icons | null;
   keywords?: string | string[] | null;
+  mainTitle: string;
 }
 
 interface MainMetadataProps extends Omit<MetadataProps, "title"> {
-  mainTitle: string;
   absolute?: string;
 }
 
@@ -80,9 +80,7 @@ function getMain(props: MainMetadataProps) {
   return getSub({
     ...props,
     title: {
-      absolute: props.absolute,
-      template: `%s | ${props.mainTitle}`,
-      default: props.mainTitle,
+      absolute: props.absolute ?? "",
     },
   });
 }
@@ -91,6 +89,10 @@ function getRoot(props: RootMetadataProps) {
   return {
     icons: props.icons,
     keywords: props.keywords,
+    title: {
+      template: `%s | ${props.mainTitle}`,
+      default: props.mainTitle,
+    },
   } as Metadata;
 }
 

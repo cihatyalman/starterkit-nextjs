@@ -4,8 +4,8 @@ import { showToast } from "@/core/helperx/toast";
 
 const RawResponseSchema = z.object({
   hasError: z.boolean().catch(false),
-  message: dataSchemas.stringNullable,
-  validationErrors: dataSchemas.record,
+  message: dataSchemas.stringOptional,
+  validationErrors: z.record(z.string(), z.string()).optional().catch({}),
   data: z.any().nullable().optional(),
 });
 export type RawResponse = z.infer<typeof RawResponseSchema>;
@@ -35,11 +35,14 @@ export function parseResponse(
   return res;
 }
 
-export function getValid(model: ResponseModel, key: string): string | null {
+export function getValid(
+  model: ResponseModel,
+  key: string,
+): string | undefined {
   try {
     return model.validationErrors?.[key];
   } catch {
-    return null;
+    return undefined;
   }
 }
 /* #endregion */

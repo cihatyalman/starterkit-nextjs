@@ -22,7 +22,7 @@ export function parseCityList(data: unknown): CityModel[] {
 
 /* #region Write */
 export const CreateCitySchema = z.object({
-  newTitle: dataSchemas.stringNullable,
+  newTitle: dataSchemas.stringOptional,
 });
 export type CreateCityData = z.infer<typeof CreateCitySchema>;
 /* #endregion */

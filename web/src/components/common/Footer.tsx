@@ -1,4 +1,4 @@
-import { CLink } from "@/components/custom/CLink";
+import { CLink } from "@/components/custom/button/CLink";
 import { Brand } from "./Brand";
 
 export const Footer = () => {

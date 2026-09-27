@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
-import { CInput } from "../CInput";
+import { CInput } from "../input/CInput";
 import { CDatePicker } from "./CDatePicker";
 import { toDate, toDateString } from "./helpers";
 import { DateRange } from "react-day-picker";

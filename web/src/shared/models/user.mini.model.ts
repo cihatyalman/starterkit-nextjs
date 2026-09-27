@@ -6,7 +6,7 @@ const RawUserMiniSchema = RawBaseSchema.extend({
   role: z.number().catch(12),
   username: dataSchemas.string,
   fullname: dataSchemas.string,
-  profileImageUrl: dataSchemas.stringNullable,
+  profileImageUrl: dataSchemas.stringOptional,
 });
 export const UserMiniSchema = RawUserMiniSchema.transform((raw) => ({
   ...mapBase(raw),

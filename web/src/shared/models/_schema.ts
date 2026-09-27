@@ -13,9 +13,9 @@ const stringFn = (label: string) => {
 const string = z
   .string({ error: "Bu alan boş bırakılamaz!" })
   .min(1, "Bu alan boş bırakılamaz!");
-const stringNullable = z.preprocess(
+const stringOptional = z.preprocess(
   (val) => (val === "" ? null : val),
-  z.string().nullish().catch(null),
+  z.string().optional(),
 );
 /* #endregion */
 
@@ -41,7 +41,7 @@ const record = z.record(z.string(), z.any()).nullish().catch({});
 export const dataSchemas = {
   stringFn,
   string,
-  stringNullable,
+  stringOptional,
   number,
   fixedNumber,
   email,

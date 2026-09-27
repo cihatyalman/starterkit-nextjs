@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { DEFAULT_LOCALE, LOCALES, LocaleType } from "./types";
+import { createNavigation } from "next-intl/navigation";
+import { LOCALES, LocaleType } from "./types";
 import { useClientLocale } from "./helpers/client";
 import { Button } from "@/components/ui/button";
 
@@ -9,6 +9,8 @@ export const LanguageSwitcher = (props: {
   extraPath?: string;
   className?: string;
 }) => {
+  const { usePathname } = createNavigation();
+
   const locale = useClientLocale();
   const pathname = usePathname();
 
@@ -18,16 +20,13 @@ export const LanguageSwitcher = (props: {
     if (segments.length > 0 && LOCALES.includes(segments[0] as LocaleType)) {
       segments.shift();
     }
-
-    if (nextLocale !== DEFAULT_LOCALE) {
-      segments.unshift(nextLocale);
-    }
+    segments.unshift(nextLocale);
 
     return "/" + segments.join("/");
   }
 
   function handleChangeLocale(locale: LocaleType) {
-    window.location.href = localeUrl(locale) + (props.extraPath ?? "");
+    window.location.replace(localeUrl(locale) + (props.extraPath ?? ""));
   }
 
   return (

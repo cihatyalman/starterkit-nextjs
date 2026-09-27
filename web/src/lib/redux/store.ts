@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { counterSlice } from "@/features/state-management/redux";
+import { counterSlice } from "@/features/examples/state-management/redux";
 
 // npm install @reduxjs/toolkit react-redux
 export const store = configureStore({

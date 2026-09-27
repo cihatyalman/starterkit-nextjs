@@ -20,7 +20,7 @@ export function useFormSubmitState(
   options?: {
     defaultValues?: Record<string, MyAny>;
     autoClear?: ClearType;
-    formSchema?: z.ZodObject;
+    formSchema?: z.ZodType;
   },
 ): {
   state: FormSubmitState;
@@ -43,16 +43,17 @@ export function useFormSubmitState(
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const tempState = { ...state };
     try {
       // zod kullanılarak validation yapılabilir.
       if (options?.formSchema) {
-        setState((prev) => ({
-          ...prev,
-          validationErrors: zodIssuesToRecord(options.formSchema!, formData),
-        }));
+        tempState.validationErrors = zodIssuesToRecord(
+          options.formSchema!,
+          formData,
+        );
       }
 
-      const res = await submitFn(state, formData);
+      const res = await submitFn(tempState, formData);
       setState(res);
 
       // form.reset ile input verileri ui'dan silinebilir.
@@ -77,7 +78,7 @@ export function useFormSubmitState(
 }
 
 export function zodIssuesToRecord(
-  formSchema: z.ZodObject,
+  formSchema: z.ZodType,
   formData: FormData,
 ): Record<string, string> {
   const errors: Record<string, string> = {};
