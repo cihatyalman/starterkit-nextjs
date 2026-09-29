@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { ProductModel } from "../models/product.model";
 import { useProductListStore } from "../store/product-list.store";
 import { MoreButton } from "./MoreButton";
-import { CImagePreview } from "@/components/custom/image/CImagePreview";
+import { CImage } from "@/components/custom/image/CImage";
 import { CLink } from "@/components/custom/button/CLink";
 import { useShallow } from "zustand/react/shallow";
 
@@ -52,7 +52,7 @@ export const ProductItem = (props: {
         "hover:scale-101 hover:border-primary transition-all",
       )}
     >
-      <CImagePreview
+      <CImage
         key={props.product.imageUrl}
         url={props.product.imageUrl}
         width={100}

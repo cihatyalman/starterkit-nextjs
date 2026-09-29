@@ -1,8 +1,14 @@
-# **StarterKit Next.js**
+# **StarterKit Next.js (AI-Ready)**
 
 Next.js projeleri için hızlı başlangıç sağlayan, düzenli yapı ve yeniden kullanılabilir bileşenler içeren bir başlangıç kiti.
 
 🚀 [Canlı Demoyu Görüntüle](https://starterkit-cy.vercel.app)
+
+🧠 **Yapay Zeka Destekli Geliştirme (AI-Assisted)**
+<br> Bu starterkit, AI asistanlarının (Claude, Cursor vb.) projenin mimarisine sadık kalarak kod üretebilmesi için özel olarak yapılandırılmıştır.
+<br> - [CLAUDE.md](CLAUDE.md), AI'a projenin mimarisini ve kodlama standartlarını anlatan ana dosyadır.
+<br> - [nextjs-coder](ai/nextjs-coder.md), AI'ın her kod üretiminde projenin mimarisine, klasör yapısına ve kod standartlarına tam uyum sağlamasını garantileyen prompt'tur.
+<br> - [plan-generator](ai/plan-generator.md), büyük özellikler eklemeden önce AI'a önce detaylı bir uygulama planı hazırlatabilir, ardından adım adım hatasız kod ürettirebilirsiniz.
 
 #
 
@@ -23,10 +29,6 @@ Projede kullanılan bileşenler: button checkbox dialog input input-otp label ra
 <br> - npm i next-themes : Tema
 <br> - npm i react-icons : Icon kütüphanesi
 
-**Büyük veri kütüphaneleri**
-<br> - npm i @tanstack/react-query @tanstack/react-query-devtools : Veri yönetimi
-<br> - npm i @tanstack/react-table : Tablo yönetimi
-
 **Diğer kütüphaneler**
 <br>- npm i @reduxjs/toolkit react-redux : State yönetimi
 <br>- npm i date-fns : Tarih işlemleri
@@ -40,6 +42,10 @@ Projede kullanılan bileşenler: button checkbox dialog input input-otp label ra
 <br>- npm i @dnd-kit/core @dnd-kit/sortable @dnd-kit/modifiers : Sıralı liste
 <br>- npm i idb : indexedDB kütüphanesi
 <br >- npm i next-intl : Çoklu dil desteği
+
+**Büyük veri kütüphaneleri**
+<br> - npm i @tanstack/react-query @tanstack/react-query-devtools : Veri yönetimi
+<br> - npm i @tanstack/react-table : Tablo yönetimi
 
 <br>
 
